@@ -20,11 +20,10 @@ class EventListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_list)
-        setSupportActionBar(toolbar)
 
-        val listUsers = arrayOf<Event>(Event("Событие 1", "https://miro.medium.com/max/864/1*gZ9XF80M8yOasLiFUzL07g.png", "Прикольное событие", "02.01.2019", "08.01.2019"),
-                               Event("Событие 2", "https://miro.medium.com/max/864/1*gZ9XF80M8yOasLiFUzL07g.png", "Интересное событие", "03.01.2019", "11.01.2019"),
-                               Event("Событие 3", "https://miro.medium.com/max/864/1*gZ9XF80M8yOasLiFUzL07g.png", "Хорошее событие", "05.01.2019", "30.01.2019"))
+        val listUsers = arrayOf<Event>(Event("Событие 1", "https://miro.medium.com/max/864/1*gZ9XF80M8yOasLiFUzL07g.png", "Прикольное событие", "02.01.2019", "08.01.2019", "3 / 10"),
+                               Event("Событие 2", "https://miro.medium.com/max/864/1*gZ9XF80M8yOasLiFUzL07g.png", "Интересное событие", "03.01.2019", "11.01.2019", "4 / 10"),
+                               Event("Событие 3", "https://miro.medium.com/max/864/1*gZ9XF80M8yOasLiFUzL07g.png", "Хорошее событие", "05.01.2019", "30.01.2019", "2 / 5"))
         list.addAll(listUsers)
         val eventList = findViewById(R.id.event_list) as RecyclerView
         eventList.layoutManager = LinearLayoutManager(this)
