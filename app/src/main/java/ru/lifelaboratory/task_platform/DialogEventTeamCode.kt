@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.zxing.integration.android.IntentIntegrator
+//import com.google.zxing.integration.android.IntentIntegrator
 
 class DialogEventTeamCode : DialogFragment() {
 

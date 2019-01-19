@@ -24,7 +24,8 @@
             android:label="Личный кабинет"
             android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".Statistics">
+        <activity android:name=".Statistics"
+                    android:label="Статистика">
         </activity>
         <activity
                 android:name=".RegisterActivity"
@@ -35,7 +36,8 @@
                 android:name=".LoginActivity"
                 android:label="Авторизация">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                    android:label="Главная">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

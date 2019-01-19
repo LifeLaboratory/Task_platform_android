@@ -7,18 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".EventListActivity"
     android:orientation="vertical">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+                android:id="@+id/name"
+                android:text="ФИО"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/login"
+                android:text="Логин"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/email"
+                android:text="Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <com.jjoe64.graphview.GraphView
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:id="@+id/graph" tools:ignore="MissingConstraints"
 
-    </android.support.design.widget.AppBarLayout>
+        />
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/logout"
+                android:text="Выйти из профиля"/>
+    </LinearLayout>
 
 
     <android.support.design.widget.BottomNavigationView
