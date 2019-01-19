@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/input_command_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Присоединиться к команде" />
+
+    <Button
+        android:id="@+id/scan_qr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Считать QR-код" />
+
+</LinearLayout>

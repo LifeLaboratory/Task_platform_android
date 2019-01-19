@@ -1,10 +1,13 @@
 package ru.lifelaboratory.task_platform
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.Toast
+import com.google.zxing.integration.android.IntentIntegrator
 
 import kotlinx.android.synthetic.main.activity_event_list.*
 import ru.lifelaboratory.task_platform.Adapter.EventListAdapter
@@ -25,9 +28,37 @@ class EventListActivity : AppCompatActivity() {
         list.addAll(listUsers)
         val eventList = findViewById(R.id.event_list) as RecyclerView
         eventList.layoutManager = LinearLayoutManager(this)
-        val adapter = EventListAdapter(list)
+        val adapter = EventListAdapter(list, supportFragmentManager)
         eventList.adapter = adapter
         adapter.notifyDataSetChanged()
+
+        navigation.setOnNavigationItemSelectedListener { it ->
+            when (it.itemId) {
+                R.id.navigation_user -> {
+                    val homeActivity : Intent = Intent(this, HomeActivity::class.java)
+                    startActivity(homeActivity)
+                }
+                R.id.navigation_eventlist -> {
+                    Toast.makeText(this, "Список событий", Toast.LENGTH_SHORT).show()
+                }
+            }
+            return@setOnNavigationItemSelectedListener true
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK) {
+            val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+            if (result != null) {
+                if (result.contents == null) {
+                    Toast.makeText(this, "Отменено", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this, "Результат сканирования: " + result.contents, Toast.LENGTH_LONG).show()
+                }
+            } else {
+                super.onActivityResult(requestCode, resultCode, data)
+            }
+        }
     }
 
 }

@@ -25,6 +25,9 @@ class MainActivity : AppCompatActivity() {
             val statIntent = Intent(this, Statistics::class.java)
             startActivity(statIntent)
         }
+
+        val eventListActivity : Intent = Intent(this, EventListActivity::class.java)
+        startActivity(eventListActivity)
     }
 
 }
