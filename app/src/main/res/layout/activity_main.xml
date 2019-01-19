@@ -20,10 +20,10 @@
             android:id="@+id/sign_in"
             tools:ignore="MissingConstraints"/>
     <Button
-            android:text="Statistics"
+            android:text="Event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/stat"
+            android:id="@+id/event"
             tools:ignore="MissingConstraints"/>
 
 </LinearLayout>

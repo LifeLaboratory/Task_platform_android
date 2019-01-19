@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val reg = findViewById<Button>(R.id.register)
         val signin = findViewById<Button>(R.id.sign_in)
-        val stat = findViewById<Button>(R.id.stat)
+        val event = findViewById<Button>(R.id.event)
         reg.setOnClickListener(){
             val regIntent = Intent(this, RegisterActivity::class.java)
             startActivity(regIntent)
@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
             val signIntent = Intent(this, LoginActivity::class.java)
             startActivity(signIntent)
         }
-        stat.setOnClickListener(){
-            val statIntent = Intent(this, Statistics::class.java)
-            startActivity(statIntent)
+        event.setOnClickListener(){
+            val eventIntent = Intent(this, EventActivity::class.java)
+            startActivity(eventIntent)
         }
 
     }
